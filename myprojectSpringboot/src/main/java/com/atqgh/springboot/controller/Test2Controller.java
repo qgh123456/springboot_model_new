@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class Test2Controller {
+
     @Autowired
     CardMoneyService cardMoneyService;
 
