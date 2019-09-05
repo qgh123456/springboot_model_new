@@ -1,0 +1,22 @@
+server:
+  port: 8096
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://47.98.136.239:3309/myprojectspringboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+#  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*-mapper.xml
+  type-aliases-package: com.atqgh.springboot.entity
+  #开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+#logging:
+#  level:
+#    com.atqgh.springboot.mapper: DEBUG #这个地方是显示sql日志的 ===这里我已经在logback-spring.xml配置文件中配置了

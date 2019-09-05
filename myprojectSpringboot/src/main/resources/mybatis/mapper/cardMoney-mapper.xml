@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atqgh.springboot.mapper.CardMoneyMapper">
+
+    <!--public void diffMoney(CardMoney cardMoney)-->
+    <update id="diffMoney" parameterType="cardMoney" >
+        update cardMoney
+        set money = money - #{transferMoney}
+        where name = #{name}
+    </update>
+
+    <!--public void addMoney(CardMoney cardMoney);-->
+    <update id="addMoney" parameterType="cardMoney">
+        update cardMoney
+        set money = money + #{transferMoney}
+        where name = #{name}
+    </update>
+
+</mapper>
