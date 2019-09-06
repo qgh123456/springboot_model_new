@@ -4,6 +4,7 @@ import com.atqgh.springboot.common.result.ResponseModel;
 import com.atqgh.springboot.entity.CardMoney;
 import com.atqgh.springboot.entity.Student;
 import com.atqgh.springboot.service.CardMoneyService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @Description
  */
 @Controller
+@Slf4j
 public class Test2Controller {
 
     @Autowired
@@ -35,5 +37,12 @@ public class Test2Controller {
         ResponseModel<CardMoney> responseModel = new ResponseModel();
         responseModel.setMessage("成功!");
         return responseModel;
+    }
+
+    @RequestMapping("/ddd")
+    @ResponseBody
+    public String ddd(){
+        log.info("=============================");
+        return "eeeee";
     }
 }

@@ -3,6 +3,8 @@ package com.atqgh.springboot.service.impl;
 import com.atqgh.springboot.entity.CardMoney;
 import com.atqgh.springboot.mapper.CardMoneyMapper;
 import com.atqgh.springboot.service.CardMoneyService;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -16,6 +18,7 @@ import tk.mybatis.mapper.entity.Example;
  */
 @Transactional(propagation = Propagation.REQUIRED,readOnly = false)
 @Service
+@Slf4j
 public class CardMoneyServiceImpl implements CardMoneyService {
 
     @Autowired
@@ -46,5 +49,6 @@ public class CardMoneyServiceImpl implements CardMoneyService {
         cardMoneyTwo.setTransferMoney(100.0);
         cardMoneyMapper.diffMoney(cardMoneyOne);
         cardMoneyMapper.diffMoney(cardMoneyTwo);
+        log.info("=============================");
     }
 }
